@@ -144,7 +144,7 @@ void * popCurrent(List * list) {
     }
 
     if (temporal->next != NULL) {
-        temporal->next->prev = temporal->prev ;
+        temporal->next->prev == temporal->prev ;
     } else {
         list->tail = temporal->prev ;
     }
