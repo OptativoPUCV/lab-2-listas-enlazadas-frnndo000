@@ -132,7 +132,27 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
-    return NULL;
+    if (list == NULL || list->current == NULL) return NULL ;
+
+    Node * temporal = list->current ;
+    void * data = temporal->data ;
+
+    if (temporal->prev != NULL) {
+        temporal->prev->next == temporal->next ;
+    } else {
+        list->head = temporal->next ;
+    }
+
+    if (temporal->next != NULL) {
+        temporal->next->prev = temporal->prev ;
+    } else {
+        list->tail = temporal->prev ;
+    }
+
+    list->current = temporal->next ;
+
+    free(temporal) ;
+    return data ;
 }
 
 void cleanList(List * list) {
