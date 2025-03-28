@@ -138,13 +138,13 @@ void * popCurrent(List * list) {
     void * data = temporal->data ;
 
     if (temporal->prev != NULL) {
-        temporal->prev->next == temporal->next ;
+        temporal->prev->next = temporal->next ;
     } else {
         list->head = temporal->next ;
     }
 
     if (temporal->next != NULL) {
-        temporal->next->prev == temporal->prev ;
+        temporal->next->prev = temporal->prev ;
     } else {
         list->tail = temporal->prev ;
     }
